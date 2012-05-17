@@ -1,0 +1,13 @@
+-- Archivo: hola.nyota
+-- Archivo de prueba para el lenguaje Nyota.
+-- (C) 2009 Ariel Ortiz, ITESM CEM
+
+procedure Saluda();
+begin
+    WrStr("Hola Mundo!");
+    WrLn();
+end;
+
+program
+    Saluda();
+end.

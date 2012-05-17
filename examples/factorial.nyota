@@ -1,0 +1,68 @@
+-- Archivo: factorial.nyota
+-- Archivo de prueba para el lenguaje Nyota.
+-- (C) 2009 Ariel Ortiz, ITESM CEM
+
+var
+    opcion: string;
+    num: integer;
+ 
+procedure FactorialIterativo(
+    n: integer
+    ): integer;
+    var
+        i, r: integer;
+    begin
+        r := 1;
+        i := 2;
+
+        loop
+            if i > n then exit; end;
+            r := r * i;
+            i := i + 1;
+        end;
+
+        return r;
+    end;
+
+procedure FactorialRecursivo(
+    n: integer
+    ): integer;
+    begin
+        if n <= 1 then
+            return 1;
+        else
+            return n * FactorialRecursivo(n - 1);
+        end;
+    end;
+    
+program
+
+    loop
+        WrStr("Introduce un numero: ");
+        num := RdInt();
+
+        WrStr("Factorial iterativo: ");
+        WrInt(FactorialIterativo(num));
+
+        WrLn();
+
+        WrStr("Factorial recursivo: ");
+        WrInt(FactorialRecursivo(num));
+
+        WrLn();
+
+        WrStr("Calcular otro factorial? ");
+        opcion := RdStr();
+
+        if LenStr(opcion) = 0 then
+            opcion := "N";
+        else
+            opcion := AtStr(opcion, 0);
+        end;
+        
+        if CmpStr(opcion, "S") <> 0 andalso
+           CmpStr(opcion, "s") <> 0 then
+            exit;
+        end;        
+    end;     
+end.

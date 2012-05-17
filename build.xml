@@ -1,0 +1,56 @@
+<project name="Nyota" default="compile" basedir=".">  
+    
+  <property environment="env" />
+  <property name="sources.dir" value="${basedir}/src" />
+  <property name="build.dir" value="${basedir}/build" />  
+  
+  <!-- sudo ln -s /usr/share/java lib -->
+
+  <!-- SCALA_HOME=/usr/share/java -->
+  <property name="scala.home" value="${env.SCALA_HOME}" />
+  <property name="scala.lib" value="/usr/share/java/lib/scala-library.jar" />
+  <property name="scala.compiler" value="/usr/share/java/lib/scala-compiler.jar" />
+  
+  <!-- JUNIT_HOME=/usr/share/java -->
+  <property name="junit.home" value="${env.JUNIT_HOME}" />
+  <property name="junit.lib" value="/usr/share/java/junit4.jar" /> <!-- different junit version -->
+  <!-- junit jar is a symbolic lynk to junit-X.X.X.jar -->
+    
+  <path id="project.classpath">
+    <pathelement location="${scala.compiler}" />
+    <pathelement location="${scala.lib}" />            
+    <pathelement location="${junit.lib}" />
+    <pathelement location="${build.dir}" />
+  </path>
+ 
+  <!-- /usr/share/java/scala-compiler.java/scala/tools/ant/antlib.xml -->
+  <taskdef resource="scala/tools/ant/antlib.xml">
+    <classpath>
+      <path refid="project.classpath"/>      
+    </classpath>
+  </taskdef>
+  
+  <target name="compile">
+    <mkdir dir="${build.dir}" />
+    <scalac srcdir="${sources.dir}" destdir="${build.dir}" classpathref="project.classpath" />      
+  </target>  
+  
+  <target name="test" depends="compile">
+    <junit haltonfailure="yes">
+      <classpath>        
+        <path refid="project.classpath"/>        
+      </classpath>
+      <formatter type="plain" usefile="no" />            
+      <batchtest fork="yes">
+        <fileset dir="${build.dir}">
+          <include name="**/*Test*.class" />        
+        </fileset>
+      </batchtest>
+    </junit>  
+  </target>
+  
+  <target name="clean">    
+    <delete dir="${build.dir}"/>    
+  </target>
+  
+</project>

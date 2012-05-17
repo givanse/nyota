@@ -1,0 +1,40 @@
+ITESM CEM 2009
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|  Fecha  | Duración |             Personas        | Dificultades afrontadas |   Resultados obtenidos   |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|13-Junio |   8 hrs  | Gastón Silva, Rafael Santos |        Ninguna          |      Parser completo     |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|20-Junio |   8 hrs  | Gastón Silva, Rafael Santos |Operadores "~>" engañosos| Creación de la estructura|
+|         |          |                             | Tipos incompatibles.    |del AST, aunque incompleto|
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             |                         |  Correción de errores.   |
+|22-Junio |   4 hrs  | Gastón Silva, Rafael Santos |        Ninguna          |Generación correcta del   |
+|         |          |                             |                         |           AST.           |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|27-Junio |   9 hrs  | Gastón Silva, Rafael Santos | Problemas con verifica  | Realización casi completa|
+|         |          |                             | Muchos Typos            |del analisis semantico.   |
+|         |          |                             | Distracciones           |                          |
+|         |          |                             | Problemas en el parser  |                          |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             | Instrucciones del CIL   |Comprender la estructura  |
+| 1-Julio |  2.5 hrs |Gastón Silva, Rafael Santos  | que no existian de for- |de los programas del CIL  |
+|         |          |                             | ma directa              |procedimientos, calls...  |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             |                         |Escribir la generacion    |
+| 2-Julio |  2.5 hrs |Gastón Silva, Rafael Santos  |       Ninguna           |de codigo de todas las    |
+|         |          |                             |                         |expresiones de nyota a CIL|
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             |Confusiones con etiquetas|Escribir la generacion    |
+| 3-Julio |  3 hrs   |Gastón Silva, Rafael Santos  |en los loops             |de codigo de la mayoria de|
+|         |          |                             |                         |enunciados de nyota a CIL |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             | Bugs muy sutiles al     |Ejecución correcta de pro-|
+| 4-Julio |  9 hrs   |Gastón Silva, Rafael Santos  | generar codigo de CIL,  |gramas sencillos de nyota |
+|         |          |                             |                         |StdLib en su mayor parte  |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+|         |          |                             |                         |Compilador de Nyota       |
+| 5-Julio |  5 hrs   |Gastón Silva, Rafael Santos  |     Ninguna             |completo.                 |
+|         |          |                             |                         |                          |
++---------+----------+-----------------------------+-------------------------+--------------------------+
+| TOTAL:  |  51 hrs  |
++---------+----------+

@@ -1,0 +1,54 @@
+-- Archivo: binario.nyota
+-- Archivo de prueba para el lenguaje Nyota.
+-- (C) 2009 Ariel Ortiz, ITESM CEM
+ 
+var 
+    opcion: string;
+    num: integer; 
+
+procedure Bin(num: integer): string;
+    var
+        resultado: string;
+        residuo: integer;
+    begin
+        if num <= 0 then
+            return "0";
+        end;
+        
+        resultado := "";     
+        loop 
+            residuo := num rem 2;
+            resultado := CatStr(IntToStr(residuo + 1), resultado);            
+            num := num div 2;
+            if num = 0 then exit; end;        
+        end;
+        
+        return resultado;
+    end;
+
+program
+    loop
+        WrStr("Introduce un numerito: ");
+        num := RdInt();
+
+        WrStr("Conversion a binario de ese numero: ");
+        WrStr(Bin(num));
+
+        WrLn();
+
+        WrStr("Convertir otro numero? ");
+        opcion := RdStr();
+
+        if LenStr(opcion) = 0 then
+            opcion := "N";
+        else
+            opcion := AtStr(opcion, 0);
+        end;
+        
+        if CmpStr(opcion, "S") <> 0 andalso
+           CmpStr(opcion, "s") <> 0 then
+            exit;
+        end;
+        
+    end;    
+end.

@@ -1,0 +1,64 @@
+-- Archivo: palindrome.nyota
+-- Archivo de prueba para el lenguaje Nyota.
+-- (C) 2009 Ariel Ortiz, ITESM CEM
+ 
+var
+    cadena, opcion: string; 
+
+procedure EsPalindrome(cadena: string): boolean;
+    var
+        inicio, fin: integer;
+    begin
+        inicio := 0;
+        fin := LenStr(cadena) - 1;
+        
+        loop
+            if inicio > fin then 
+                return true;
+            --aqui va un if
+            end;
+            if CmpStr(AtStr(cadena, inicio), AtStr(cadena, fin)) <> 0 then
+                return false;
+            end;            
+            inicio := inicio + 1;
+            fin := fin - 1;
+        end;        
+    end;
+    
+program
+
+    loop
+        WrStr("Introduce una cadena: ");        
+        cadena:=RdStr();
+        
+        if EsPalindrome(cadena) then
+            WrStr(
+              CatStr("La cadena \"",
+                CatStr(cadena, "\" es un palindrome.")
+              )
+            );
+        else
+            WrStr(
+              CatStr("La cadena \"",
+                CatStr(cadena, "\" NO es un palindrome.")
+              )
+            );
+        end;
+
+        WrLn();
+
+        WrStr("Verficar otra cadena? ");
+        opcion := RdStr();
+
+        if LenStr(opcion) = 0 then
+            opcion := "N";
+        else
+            opcion := AtStr(opcion, 0);
+        end;
+        
+        if CmpStr(opcion, "S") <> 0 andalso
+           CmpStr(opcion, "s") <> 0 then
+            exit;
+        end;        
+    end;     
+end.

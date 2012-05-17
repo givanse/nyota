@@ -1,0 +1,53 @@
+var
+x : integer;
+y : string;
+z : real;
+b : boolean;
+program
+	y := CatStr( 
+	        CatStr("Hoy es ",Date()), 
+	        CatStr("y son las: ",Time()) 
+	    ); 
+	WrLn();
+	WrStr(y);
+	WrLn();
+	WrStr("Seccion de Randomness: ");
+	WrLn();
+	WrStr("Cual es tu nombre?");
+	WrLn();
+	y:= RdStr();
+	y:= Rot13(y);
+	WrStr(CatStr("Hola, ",y));
+	WrLn();
+	WrStr(CatStr("Perdon, quise decir..",Rot13(y)));
+	WrLn();
+	WrStr(FraseDelDia());
+	WrLn();
+	WrInt(RandInt());
+	WrLn();
+	WrReal(RandReal());
+	WrLn();
+	WrStr("Funciones :)");
+	WrLn();
+	Pino(6);
+	WrLn();
+	WrStr("Dame un digito: ");
+	WrLn();
+	x := RdInt();
+	WrLn();
+	WrStr("Ahora la pasare a binario...");
+	WrLn();
+	WrInt(Binario(x));
+	WrLn();
+	WrStr("Partiendo de ese numero, generare pares..");
+	WrLn();
+	Pares(x,x+50);
+	WrStr("Y ahora nones...xD");
+	WrLn();
+	Nones(x,x+50);
+	WrLn();
+	WrStr("La serie ganadora: ");
+	WrLn();
+	Fibonacci(25);
+
+end.
